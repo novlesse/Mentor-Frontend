@@ -1,9 +1,8 @@
 <h1 align="center">Mentor</h1>
-<h2 align="center">nwHacks 2021
+<p align="center">nwHacks 2021</p>
 <p align="center">
 <img src="">
 </p>
-</h2>
 
 <h4 align="center">Developers: Cindy Le, Emmy Wong, Homer Li, Jeffrey Lau</h4>
 
