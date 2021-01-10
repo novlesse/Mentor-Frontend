@@ -30,6 +30,7 @@ export default function Login(props) {
         handleChange,
         handleBlur,
         handleSubmit,
+        isSubmitting,
         touched,
         errors,
       }) => {
@@ -68,8 +69,22 @@ export default function Login(props) {
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Form>
-                <Button variant="primary" onClick={() => handleSubmit()}>
-                  Login
+
+                <Button
+                  variant="primary"
+                  onClick={() => handleSubmit()}
+                  disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <Spinner
+                      as="span"
+                      animation="border"
+                      size="sm"
+                      role="status"
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    "Submit"
+                  )}
                 </Button>
               </Card.Body>
             </Container>
