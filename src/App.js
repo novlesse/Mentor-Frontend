@@ -12,12 +12,9 @@ import Registration from "./pages/Registration";
 import Workshops from "./pages/Workshops";
 import Business from './pages/Business';
 
-<<<<<<< HEAD
 import GlobalStyle from './globalStyles';
-=======
 import "./App.css";
 import EventSignup from "./pages/EventSignup";
->>>>>>> fa0740479c13f261b42628a117888ef91e0e2338
 
 export default function App(props) {
   const [user, setUser] = useState();
@@ -28,12 +25,8 @@ export default function App(props) {
 
   return (
     <div>
-<<<<<<< HEAD
-      <NavBar />
-      <GlobalStyle />
-=======
       <NavBar user={user} />
->>>>>>> fa0740479c13f261b42628a117888ef91e0e2338
+      <GlobalStyle />
       <div className="content">
         <Switch>
           <Route path="/" exact component={Home} />
