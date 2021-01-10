@@ -23,17 +23,19 @@ export default function Registration(props) {
     document.title = "Registration";
   }, []);
 
+  const submitForm = (values, { setSubmitting, resetForm }) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
+      resetForm();
+    }, 1000);
+  };
+
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={(values, { setSubmitting, resetForm }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-          resetForm();
-        }, 1000);
-      }}>
+      onSubmit={submitForm}>
       {({
         errors,
         dirty,
@@ -52,8 +54,7 @@ export default function Registration(props) {
                   <Form.Group controlId="username">
                     <Form.Label>Username</Form.Label>
                     <Form.Control
-                      type="email"
-                      placeholder="mentor"
+                      type="username"
                       name="username"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -68,7 +69,6 @@ export default function Registration(props) {
                     <Form.Label>Email</Form.Label>
                     <Form.Control
                       type="email"
-                      placeholder="hello@mentor.com"
                       name="email"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -83,7 +83,6 @@ export default function Registration(props) {
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                       type="password"
-                      placeholder="******"
                       name="password"
                       onChange={handleChange}
                       onBlur={handleBlur}

@@ -6,5 +6,5 @@ export default function MainButton({
   variant = "primary",
   ...otherProps
 }) {
-  return <Button variant={variant} onClick={onClick} {...otherProps} />;
+  return <Button onClick={onClick} variant={variant} {...otherProps} />;
 }
