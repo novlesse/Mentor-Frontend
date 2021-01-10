@@ -46,6 +46,7 @@ export default function Login(props) {
           <>
             <Container>
               <Card.Body>
+                <h2 className="mb-4">Login</h2>
                 <Form>
                   <Form.Group controlId="email">
                     <Form.Label>Email</Form.Label>
