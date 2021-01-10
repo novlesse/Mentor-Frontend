@@ -51,7 +51,6 @@ export default function Login(props) {
                     <Form.Label>Email</Form.Label>
                     <Form.Control
                       type="email"
-                      placeholder="hello@mentor.com"
                       name="email"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -66,7 +65,6 @@ export default function Login(props) {
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                       type="password"
-                      placeholder="******"
                       name="password"
                       onChange={handleChange}
                       onBlur={handleBlur}
