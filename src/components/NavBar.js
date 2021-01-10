@@ -1,10 +1,19 @@
 import React from "react";
 import { Button, Form, FormControl, Nav, Navbar } from "react-bootstrap";
+import logo from "../assets/images/logo192.png";
 
 export default function NavBar(props) {
   return (
     <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="/">Navbar</Navbar.Brand>
+      <Navbar.Brand href="/">
+        <img
+          src={logo}
+          width="28"
+          height="25"
+          className="d-inline-block align-top"
+          alt="Logo"
+        />
+      </Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="/workshops">Workshops</Nav.Link>
         <Nav.Link href="/contact">Contact</Nav.Link>
