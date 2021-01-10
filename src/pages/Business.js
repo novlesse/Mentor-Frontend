@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Row, Col, Container } from "react-bootstrap";
 import Axios from 'axios';
 import Event from '../components/Event';
 
@@ -45,26 +46,46 @@ function Business(props) {
         console.log(events);
         let allevents = events.map((event) => {
             console.log(event);
-            return (<Event key={event._id} date={event.start_time} name={event.name} /> )
+            return (<Col sm={3}>
+                        <Event 
+                            key={event._id} 
+                            date={event.start_time} 
+                            name={event.name} /> 
+                    </Col> )
         })
-
-        return allevents;
+        return allevents; 
     };
 
    
 
     return (
         <div>
-            <h1>Business: { businessName }</h1>
+            <div className="business-header-container">
+                <h1>{ businessName }</h1>
+            </div>
+            <div className="business-info-container">
+
+                <img className="business-info-image" src="https://images.unsplash.com/photo-1553520077-205eb37650fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"/>
+                <div className="info-text">
+                    <h5>{ businessName }</h5>
+                    <p>{description}</p>
+                </div>
+            </div>
             {/* <p>{pastEvents[0]['name']}</p>
             <p>{pastEvents[0]['start_time']}</p> */}
             {/* {pastEvents.map((event)=>
                 <Event key={event._id} date={event.start_time} name={event.name} />
             )} */}
-            <h5>Upcoming Events</h5>
-            {loopEventComponent(upcomingEvents)}
-            <h5>Past Events</h5>
-            {loopEventComponent(pastEvents)}
+            <Container>
+                <h5 className='business-event-title'>Upcoming Events</h5>
+                <Row>
+                    {loopEventComponent(upcomingEvents)} 
+                </Row>
+                <h5 className='business-event-title'>Past Events</h5>
+                <Row>
+                    {loopEventComponent(pastEvents)}
+                </Row>
+            </Container>
            
         </div>
     )

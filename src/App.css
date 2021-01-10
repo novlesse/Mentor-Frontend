@@ -1,0 +1,38 @@
+.business-header-container{
+    display:flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.business-info-container{
+    display:flex;
+    justify-content: center;
+    margin-top:2%;
+    margin-bottom: 5%;
+}
+
+.business-info-image{
+    height:35%;
+    width:25%;
+    margin-right: 2%;
+}
+
+.business-event-title{
+    margin-bottom:2%;
+}
+
+.business-event-container{
+    display: flex;
+}
+
+.event-component-container{
+    margin: 1%;
+}
+
+
+
+.event-component-image-content{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
