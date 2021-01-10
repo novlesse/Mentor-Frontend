@@ -33,12 +33,14 @@ export default function Login(props) {
         }, 1000);
       }}>
       {({
-        handleChange,
+        errors,
+        dirty,
         handleBlur,
+        handleChange,
         handleSubmit,
         isSubmitting,
+        isValid,
         touched,
-        errors,
       }) => {
         return (
           <>
@@ -76,7 +78,10 @@ export default function Login(props) {
                   </Form.Group>
                 </Form>
 
-                <Button onClick={() => handleSubmit()} disabled={isSubmitting}>
+                <Button
+                  onClick={() => handleSubmit()}
+                  className={dirty && isValid ? "" : "disabled-btn"}
+                  disabled={!(dirty && isValid) && { isSubmitting }}>
                   {isSubmitting ? (
                     <Spinner
                       as="span"

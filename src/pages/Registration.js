@@ -22,7 +22,7 @@ export default function Registration(props) {
   useEffect(() => {
     document.title = "Registration";
   }, []);
-  
+
   return (
     <Formik
       initialValues={initialValues}
@@ -35,12 +35,14 @@ export default function Registration(props) {
         }, 1000);
       }}>
       {({
-        handleChange,
+        errors,
+        dirty,
         handleBlur,
+        handleChange,
         handleSubmit,
         isSubmitting,
+        isValid,
         touched,
-        errors,
       }) => {
         return (
           <>
@@ -93,7 +95,10 @@ export default function Registration(props) {
                   </Form.Group>
                 </Form>
 
-                <Button onClick={() => handleSubmit()} disabled={isSubmitting}>
+                <Button
+                  onClick={() => handleSubmit()}
+                  className={dirty && isValid ? "" : "disabled-btn"}
+                  disabled={!(dirty && isValid) && { isSubmitting }}>
                   {isSubmitting ? (
                     <Spinner
                       as="span"
