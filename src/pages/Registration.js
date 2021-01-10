@@ -199,6 +199,16 @@ export default function Registration(props) {
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Form.Row>
+
+                <Form.Group controlId="imageUpload">
+                  <Form.Label>Upload Image</Form.Label>
+                  <Form.File id="custom-file" label="" custom />
+                </Form.Group>
+
+                <Form.Group controlId="description">
+                  <Form.Label>Business Description</Form.Label>
+                  <Form.Control as="textarea" rows={5} />
+                </Form.Group>
               </Form>
 
               <Button
