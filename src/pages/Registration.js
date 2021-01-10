@@ -7,20 +7,22 @@ import * as Yup from "yup";
 import Button from "../components/Button";
 
 const initialValues = {
+  username: "",
   email: "",
   password: "",
 };
 
 const validationSchema = Yup.object({
+  username: Yup.string().required().min(3).label("Username"),
   email: Yup.string().required().email("Invalid email address").label("Email"),
   password: Yup.string().required().min(6).label("Password"),
 });
 
-export default function Login(props) {
+export default function Registration(props) {
   useEffect(() => {
-    document.title = "Login";
+    document.title = "Registration";
   }, []);
-
+  
   return (
     <Formik
       initialValues={initialValues}
@@ -45,6 +47,21 @@ export default function Login(props) {
             <Container>
               <Card.Body>
                 <Form>
+                  <Form.Group controlId="username">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="mentor"
+                      name="username"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      isInvalid={touched.username && errors.username}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.username}
+                    </Form.Control.Feedback>
+                  </Form.Group>
+
                   <Form.Group controlId="email">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
@@ -86,7 +103,7 @@ export default function Login(props) {
                       aria-hidden="true"
                     />
                   ) : (
-                    "Login"
+                    "Register"
                   )}
                 </Button>
               </Card.Body>

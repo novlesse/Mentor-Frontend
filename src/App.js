@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import Registration from "./pages/Registration";
 import Workshops from "./pages/Workshops";
 
 import "./App.css";
@@ -22,6 +23,7 @@ export default function App(props) {
           <Route path="/contact" component={Contact} />
           <Route path="/about" component={About} />
           <Route path="/login" component={Login} />
+          <Route path="/registeration" component={Registration} />
           <Route path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>
