@@ -40,7 +40,7 @@ export default function Login(props) {
               <Card.Body>
                 <Form>
                   <Form.Group controlId="email">
-                    <Form.Label>Email: </Form.Label>
+                    <Form.Label>Email</Form.Label>
                     <Form.Control
                       type="email"
                       placeholder="hello@mentor.com"
@@ -55,10 +55,10 @@ export default function Login(props) {
                   </Form.Group>
 
                   <Form.Group controlId="password">
-                    <Form.Label>Password: </Form.Label>
+                    <Form.Label>Password</Form.Label>
                     <Form.Control
                       type="password"
-                      placeholder="Enter Password"
+                      placeholder="******"
                       name="password"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -83,7 +83,7 @@ export default function Login(props) {
                       aria-hidden="true"
                     />
                   ) : (
-                    "Submit"
+                    "Login"
                   )}
                 </Button>
               </Card.Body>
