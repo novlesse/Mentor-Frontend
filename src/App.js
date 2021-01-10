@@ -13,6 +13,7 @@ import Registration from "./pages/Registration";
 import Workshops from "./pages/Workshops";
 import Business from './pages/Business';
 
+import GlobalStyle from './globalStyles';
 import "./App.css";
 import EventSignup from "./pages/EventSignup";
 
@@ -26,6 +27,7 @@ export default function App(props) {
   return (
     <div>
       <NavBar user={user} />
+      <GlobalStyle />
       <div className="content">
         <Switch>
           <Route path="/" exact component={Home} />
