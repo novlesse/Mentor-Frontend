@@ -11,6 +11,7 @@ import Registration from "./pages/Registration";
 import Workshops from "./pages/Workshops";
 
 import "./App.css";
+import EventSignup from "./pages/EventSignup";
 
 export default function App(props) {
   return (
@@ -24,6 +25,8 @@ export default function App(props) {
           <Route path="/about" component={About} />
           <Route path="/login" component={Login} />
           <Route path="/registeration" component={Registration} />
+          <Route path="/eventSignup" component={EventSignup} />
+
           <Route path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>

@@ -1,0 +1,45 @@
+.eventSignupContent {
+  max-width: 40%;
+  min-width: 30%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.eventSignupImg {
+  max-width: 475px;
+  max-height: 475px;
+  object-fit: scale-down;
+}
+
+.eventContent {
+  display: flex;
+  align-items: center;
+}
+
+.eventContent > .textDiv {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.ticket {
+  box-sizing: border-box;
+  padding: 30px 100px;
+  background-color: lightgray;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+#createTicket {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.inputGrp {
+  margin-right: 30px;
+}
+
+.formSubmitBtn {
+  margin-top: 20px;
+}
