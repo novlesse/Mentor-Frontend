@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import Logout from "./components/Logout";
@@ -15,7 +15,11 @@ import "./App.css";
 
 export default function App(props) {
   const [user, setUser] = useState();
-  
+
+  useEffect(() => {
+    setUser();
+  }, []);
+
   return (
     <div>
       <NavBar user={user} />
