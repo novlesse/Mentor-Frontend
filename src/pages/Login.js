@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik } from "formik";
-import * as Yup from "yup";
-import { Button, Form, Card, Container } from "react-bootstrap";
+import { Form, Card, Container } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
+import * as Yup from "yup";
+
+import Button from "../components/Button";
 
 const initialValues = {
   email: "",
@@ -15,6 +17,10 @@ const validationSchema = Yup.object({
 });
 
 export default function Login(props) {
+  useEffect(() => {
+    document.title = "Login";
+  }, []);
+
   return (
     <Formik
       initialValues={initialValues}
@@ -27,22 +33,25 @@ export default function Login(props) {
         }, 1000);
       }}>
       {({
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        touched,
         errors,
+        dirty,
+        handleBlur,
+        handleChange,
+        handleSubmit,
+        isSubmitting,
+        isValid,
+        touched,
       }) => {
         return (
           <>
             <Container>
               <Card.Body>
+                <h2 className="mb-4">Login</h2>
                 <Form>
                   <Form.Group controlId="email">
-                    <Form.Label>Email: </Form.Label>
+                    <Form.Label>Email</Form.Label>
                     <Form.Control
                       type="email"
-                      placeholder="hello@mentor.com"
                       name="email"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -54,10 +63,9 @@ export default function Login(props) {
                   </Form.Group>
 
                   <Form.Group controlId="password">
-                    <Form.Label>Password: </Form.Label>
+                    <Form.Label>Password</Form.Label>
                     <Form.Control
                       type="password"
-                      placeholder="Enter Password"
                       name="password"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -68,8 +76,22 @@ export default function Login(props) {
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Form>
-                <Button variant="primary" onClick={() => handleSubmit()}>
-                  Login
+
+                <Button
+                  onClick={() => handleSubmit()}
+                  className={dirty && isValid ? "" : "disabled-btn"}
+                  disabled={!(dirty && isValid) && { isSubmitting }}>
+                  {isSubmitting ? (
+                    <Spinner
+                      as="span"
+                      animation="border"
+                      size="sm"
+                      role="status"
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    "Login"
+                  )}
                 </Button>
               </Card.Body>
             </Container>
