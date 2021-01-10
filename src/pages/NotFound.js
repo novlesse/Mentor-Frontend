@@ -5,5 +5,5 @@ export default function NotFound(props) {
     document.title = "Page Not Found";
   }, []);
 
-  return <div>NotFound</div>;
+  return <h1 className="vertical-center">Page Not Found</h1>;
 }

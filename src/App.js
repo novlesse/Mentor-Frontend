@@ -5,6 +5,7 @@ import Logout from "./components/Logout";
 import NavBar from "./components/NavBar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import CreateWorkshop from "./pages/Workshops";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
@@ -31,7 +32,9 @@ export default function App(props) {
           <Route path="/workshops" component={Workshops} />
           <Route path="/contact" component={Contact} />
           <Route path="/about" component={About} />
+          <Route path="/registeration" component={Registration} />
           <Route path="/login" component={Login} />
+          <Route path="/createWorkshop" component={CreateWorkshop} />
           <Route path="/logout" component={Logout} />
           <Route path="/registeration" component={Registration} />
           <Route path="/eventSignup" component={EventSignup} />

@@ -1,3 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .eventSignupContent {
   max-width: 40%;
   min-width: 30%;
@@ -44,41 +56,39 @@
   margin-top: 20px;
 }
 
-.business-header-container{
-    display:flex;
-    justify-content: center;
-    margin-top: 5%;
+.business-header-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
 }
 
-.business-info-container{
-    display:flex;
-    justify-content: center;
-    margin-top:2%;
-    margin-bottom: 5%;
+.business-info-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  margin-bottom: 5%;
 }
 
-.business-info-image{
-    height:35%;
-    width:25%;
-    margin-right: 2%;
+.business-info-image {
+  height: 35%;
+  width: 25%;
+  margin-right: 2%;
 }
 
-.business-event-title{
-    margin-bottom:2%;
+.business-event-title {
+  margin-bottom: 2%;
 }
 
-.business-event-container{
-    display: flex;
+.business-event-container {
+  display: flex;
 }
 
-.event-component-container{
-    margin: 1%;
+.event-component-container {
+  margin: 1%;
 }
 
-
-
-.event-component-image-content{
-    height:100%;
-    width:100%;
-    object-fit: cover;
+.event-component-image-content {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
