@@ -1,12 +1,13 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-import NotFound from "./components/NotFound";
-import Workshops from "./components/Workshops";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
+import Workshops from "./pages/Workshops";
 
 import "./App.css";
 
@@ -20,6 +21,7 @@ export default function App(props) {
           <Route path="/workshops" component={Workshops} />
           <Route path="/contact" component={Contact} />
           <Route path="/about" component={About} />
+          <Route path="/login" component={Login} />
           <Route path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>
