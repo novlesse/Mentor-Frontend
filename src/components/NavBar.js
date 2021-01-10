@@ -1,8 +1,8 @@
 import React from "react";
-import { Button, Form, FormControl, Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import logo from "../assets/images/logo192.png";
 
-export default function NavBar(props) {
+export default function NavBar({ user }) {
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="/">
@@ -18,13 +18,21 @@ export default function NavBar(props) {
         <Nav.Link href="/workshops">Workshops</Nav.Link>
         <Nav.Link href="/contact">Contact</Nav.Link>
         <Nav.Link href="/about">About</Nav.Link>
-        <Nav.Link href="/login">Login</Nav.Link>
-        <Nav.Link href="/registeration">Register</Nav.Link>
       </Nav>
-      <Form inline>
-        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-        <Button variant="outline-info">Search</Button>
-      </Form>
+      <Nav>
+        {!user && (
+          <>
+            <Nav.Link href="/registeration">Register</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
+          </>
+        )}
+        {user && (
+          <>
+            <Nav.Link href="/createWorkshop">Create Workshop</Nav.Link>
+            <Nav.Link href="/logout">Logout</Nav.Link>
+          </>
+        )}
+      </Nav>
     </Navbar>
   );
 }
