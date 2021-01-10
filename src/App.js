@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Registration from "./pages/Registration";
 import Workshops from "./pages/Workshops";
+import Business from './pages/Business';
 
 import "./App.css";
 
@@ -25,6 +26,7 @@ export default function App(props) {
           <Route path="/login" component={Login} />
           <Route path="/registeration" component={Registration} />
           <Route path="/not-found" component={NotFound} />
+          <Route path='/business' component={Business}/>
           <Redirect to="/not-found" />
         </Switch>
       </div>
