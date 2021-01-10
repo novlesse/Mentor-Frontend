@@ -9,12 +9,13 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Workshops from "./pages/Workshops";
 
-import "./App.css";
+import GlobalStyle from './globalStyles';
 
 export default function App(props) {
   return (
     <div>
       <NavBar />
+      <GlobalStyle />
       <div className="content">
         <Switch>
           <Route path="/" exact component={Home} />

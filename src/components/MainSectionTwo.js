@@ -1,26 +1,28 @@
 import React from 'react';
 import { Jumbotron, Row, Col, Image } from 'react-bootstrap';
-const MainSection = () => {
+import {MainSectionContainerTwo, ImageBox, SubtitleBox, TitleBoxTwo} from './elements'
+
+const MainSectionTwo = (props) => {
 	return (
-		<Jumbotron fluid>
+		<MainSectionContainerTwo>
 			<Row>
 				<Col>
                     <Col>
 					<Row className="d-flex justify-content-end">
-						<h2>Teach a class</h2>
+						<TitleBoxTwo>{props.title}</TitleBoxTwo>
 					</Row>
 					<Row className="d-flex justify-content-end">
-						<h4>Sign up now!</h4>
+						<SubtitleBox>{props.subtitle}</SubtitleBox>
 					</Row>
                     </Col>
 				</Col>
 				<Col>
-					<Image className="imageBox" />
-					Image Here
+					<Image src={props.img} alt={props.alt}/>
+					
 				</Col>
 			</Row>
-		</Jumbotron>
+		</MainSectionContainerTwo>
 	);
 };
 
-export default MainSection;
+export default MainSectionTwo;

@@ -1,10 +1,14 @@
 import React from 'react';
-import {Container} from 'react-bootstrap'
+import {Container, Row} from 'react-bootstrap'
+import {FooterBox} from './elements'
+
 const Footer = () => {
     return (
-        <Container>
-            <h6>Copyright of Jeffrey Lau, Homer Li, Emmy Wong, Cindy le</h6>
-        </Container>
+        <FooterBox>
+            <Row>
+            <h6>Copyright of Jeffrey Lau, Homer Li, Emmy Wong, Cindy Le</h6>
+            </Row>
+        </FooterBox>
     )
 }
 

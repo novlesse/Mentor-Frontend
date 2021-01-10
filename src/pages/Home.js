@@ -4,29 +4,36 @@ import Footer from '../components/Footer.js';
 import Hero from '../components/Hero.js';
 import MainSection from '../components/MainSection.js';
 import MainSectionTwo from '../components/MainSectionTwo.js';
-import MainSectionThree from '../components/MainSectionThree.js';
-import '../App.css'
 
-const HomeSection = () => {
+
+const HomeSection = (props) => {
   const sectionOne = {
-    title: "Have a space to rent out?",
-    subTitle: "Email to let us know"
+    title: "Want to learn something new?",
+    subtitle: "Start Searching",
+    img: '../images/pottery.jpg',
+    alt: "pottery"
   };
 
-  const sectionTwo = "Have a space to rent out?";
-
+  const sectionTwo = {
+    title: "Have a skill? Teach a class.",
+    subtitle: "Register Now",
+    img: '../images/drawing.jpg',
+    alt: "art"
+  };
   const sectionThree = {
     title: "Have a space to rent out?",
-    subTitle: "Email to let us know"
+    subtitle: "Email to let us know",
+    img: '../images/rentalroom.jpg',
+    alt: "empty space"
   };
 
 
 	return (
 		<Container fluid>
 			<Hero />
-			<MainSection />
-			<MainSectionTwo />
-			<MainSectionThree />
+			<MainSection title={sectionOne.title} subtitle={sectionOne.subtitle} image={sectionOne.img} alt={sectionOne.alt}/>
+			<MainSectionTwo title={sectionTwo.title} subtitle={sectionTwo.subtitle} image={sectionTwo.img} alt={sectionTwo.alt}/>
+			<MainSection title={sectionThree.title} subtitle={sectionThree.subtitle} image={sectionThree.img} alt={sectionThree.alt}/>
 
 			
       <Footer />
